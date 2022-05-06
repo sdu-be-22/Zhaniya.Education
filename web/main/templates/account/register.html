@@ -1,20 +1,108 @@
 {% extends "base.html" %}
 
-{% block title %}Create an account{% endblock %}
+{% block title %}Register{% endblock %}
+
 
 {% block content %} 
 
 {% load crispy_forms_tags %}         
 
 <!--Register--> 
-<div class="container py-5">
-	<h1>Register</h1>
-	<form method="POST">
+<div class="shadow p-4 mb-5 bg-body rounded" >
+	<h1>Tirkelý</h1>
+	<br/>
+	<form action="{% url 'register' %}" method="POST">
 		{% csrf_token %}
 		{{ register_form|crispy }}                    
-		<button class="btn btn-primary" type="submit">Register</button>
+		<button  value="Submit" class="btn btn-secondary" type="submit">Tirkelý</button>
 	</form>
-	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+	<p class="text-center">Eger siz tirkelgen bolsańyz,  <a href="/login">Kirý</a> basyńyz.</p>
 </div>
 
+
+
 {% endblock %}
+
+
+<!-- 
+
+
+{% load static %}
+
+
+<body>
+
+    
+
+
+	  <form action="">
+		<h1>Tırkelu</h1>
+		<p>Aty-jönı</p>
+		<input type="text" class="inputbox" name="name" required />
+		<p>Jasy</p>
+		<input type="number" class="inputbox" name="card_number" id="card_number" required />
+		<p>Email</p>
+		<input type="email" class="inputbox" name="name" required />
+		<p>Synyp</p>
+		<select class="inputbox" name="card_type" id="card_type" required>
+		  <option value="">sadik</option>
+		  <option value="1">1-4 synyp</option>
+		  <option value="2">5-8 synyp</option>
+		  <option value="3">9-11 synyp</option>
+		</select>
+		<button type="submit" class="buttonsend">Send</button>
+	  </form>
+    </header>
+    
+
+ 
+	<style>
+form {
+  margin: 3rem auto;
+  background-color: #ffffff;
+  padding: 1rem 2rem 3rem 3rem;
+}
+p{
+  display:block;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: .8rem 0;
+}
+.inputbox
+{
+  color:#030303;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1.5px solid #ccc;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  font-family: 'Roboto', sans-serif;
+  color: #615a5a;
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline:none;
+}
+label{
+	width: 5rem;
+	border-bottom: 1.5px solid #ccc;
+	display: flex;
+}
+label input{
+	margin: 0.5rem 0 0 1rem;
+}
+@media only screen and (max-width: 787px) {
+    .card{
+        flex-direction: column;
+        width: auto;     
+	}
+}
+
+
+	</style> 
+
+
+
+
+  </body>
+</html> -->
