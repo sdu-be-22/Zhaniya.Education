@@ -3,16 +3,12 @@
 </p>
 <h2 align="center">Zhaniya.Education</h2>
 
-# Zhaniya.Education
-lorem
 ## Table of contents
 
 * [General Info](#general-info)
 * [Teachers](#teachers)
 * [Team Members](#team-members)
 * [Screenshots](#screenshots)
-* [Database Schema](#database-schema)
-* [Features](#features)
 * [Technologies](#technologies) 
 
 ## General Info
