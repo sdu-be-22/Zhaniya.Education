@@ -1,6 +1,5 @@
 <p align="center"> 
-  ![image](https://user-images.githubusercontent.com/81968879/167125623-d9a527e0-a3f9-4662-946c-575e93712388.png)
-
+<img src="web\main\static\css\images\s.jpeg" >
 </p>
 <h2 align="center">Zhaniya.Education</h2>
 
@@ -14,7 +13,7 @@
 
 ## General Info
 
-This is a blogging application written in the Django framework. 
+This is a blogging application written in the Django framework.
 
 ## Teachers
 
@@ -27,7 +26,11 @@ This is a blogging application written in the Django framework.
 * Yernar Madiyar 200103029@stu.sdu.edu.kz
 
 ## Screenshots
-
+<img src="web\main\static\css\images\s1.jpeg" >
+<img src="web\main\static\css\images\s2.jpeg" >
+<img src="web\main\static\css\images\s3.jpeg" >
+<img src="web\main\static\css\images\s4.jpeg" >
+<img src="web\main\static\css\images\s5.jpeg" >
 
 
 ## Technologies
