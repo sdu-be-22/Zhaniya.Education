@@ -12,4 +12,5 @@ urlpatterns = [
     path('tasks', views.tasks, name='tasks'),
     path('videoles', views.videoles, name='videoles'),
     path('clas', views.clas, name='clas'),
+    path('addtask', views.addtask, name='addtask'),
 ]

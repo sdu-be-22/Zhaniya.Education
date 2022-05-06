@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import Task, Classes
+from .models import *
 from django.forms import ModelForm, TextInput, Textarea
 
 
@@ -59,3 +59,8 @@ class ClassesForm(ModelForm):
                 'placeholder': 'Введите название'
             }),
         }
+
+class addQuestionform(ModelForm):
+    class Meta:
+        model=QuesModel
+        fields="__all__"
