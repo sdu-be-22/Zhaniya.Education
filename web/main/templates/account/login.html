@@ -1,25 +1,12 @@
 {% extends "base.html" %}
 
-<<<<<<< HEAD
-=======
 {% block title %}Login{% endblock %}
 
->>>>>>> ae32f6cba11e48857f7a3349d1108c95192ca020
 {% block content %}
 
 {% load crispy_forms_tags %}
 
 <!--Login--> 
-<<<<<<< HEAD
-<div class="container py-5">
-  <h1>Login</h1>
-  <form method="POST">
-    {% csrf_token %}
-    {{ login_form|crispy }}
-    <button class="btn btn-primary" type="submit">Login</button>
-  </form>
-  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
-=======
 <div class="shadow p-4 mb-5 bg-body rounded">
   <h1>Kirý</h1>
   <form action="" method=POST>
@@ -42,7 +29,6 @@
 </form>
 
   <p class="text-center">Júıede tirkelmegensiz be? <a href="/register">Tirkelý</a>.</p>
->>>>>>> ae32f6cba11e48857f7a3349d1108c95192ca020
 </div>
 
 {% endblock %}

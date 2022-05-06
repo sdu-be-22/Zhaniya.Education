@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
-from .forms import TaskForm, NewUserForm
-from .models import Task
+from .forms import TaskForm, NewUserForm, ClassesForm
+from .models import Task, Classes
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 def home(request):
-    tasks = Task.objects.order_by('-id')
-    return render(request, 'index.html', {'title': 'Главная страница сайта', 'tasks': tasks})
+    titles = Classes.objects.order_by('-id')
+    return render(request, 'index.html', {'title': 'Главная страница сайта', 'titles': titles})
     
 def about(request):
     return render(request, 'about.html')
@@ -46,7 +46,7 @@ def login_request(request):
 
 def log_out(request):
 	logout(request)
-	return render(request, 'account/log_out.html')
+	return render(request, 'account/login.html')
 
 def create(request):
     error = ''
@@ -58,4 +58,27 @@ def create(request):
             return redirect('home')
     else:
             form = TaskForm()
+    return render(request, 'create.html', {'form': form})
+
+def themes(request):
+    tasks = Task.objects.order_by('-id')
+    return render(request, 'themes.html', {'title': 'Takiriptar', 'tasks': tasks})
+
+
+def tasks(request):
+    return render(request, 'tasks.html')
+
+def videoles(request):
+    return render(request, 'videoles.html')
+
+def clas(request):
+    error = ''
+    if request.method == 'POST':
+        form = ClassesForm(request.POST)
+        
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+            form = ClassesForm()
     return render(request, 'create.html', {'form': form})
