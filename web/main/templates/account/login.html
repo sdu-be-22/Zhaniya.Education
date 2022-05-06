@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 
+<<<<<<< HEAD
+=======
+{% block title %}Login{% endblock %}
+
+>>>>>>> ae32f6cba11e48857f7a3349d1108c95192ca020
 {% block content %}
 
 {% load crispy_forms_tags %}
 
 <!--Login--> 
+<<<<<<< HEAD
 <div class="container py-5">
   <h1>Login</h1>
   <form method="POST">
@@ -13,6 +19,30 @@
     <button class="btn btn-primary" type="submit">Login</button>
   </form>
   <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+=======
+<div class="shadow p-4 mb-5 bg-body rounded">
+  <h1>Kirý</h1>
+  <form action="" method=POST>
+    {% csrf_token %}
+
+  <form>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Paıdalanýshy aty</label>
+    <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Qupıasóz</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+  
+  <button  value="Submit" class="btn btn-secondary" type="submit">Kirý</button>
+
+</form>
+
+  <p class="text-center">Júıede tirkelmegensiz be? <a href="/register">Tirkelý</a>.</p>
+>>>>>>> ae32f6cba11e48857f7a3349d1108c95192ca020
 </div>
 
 {% endblock %}
