@@ -1,5 +1,6 @@
 <p align="center"> 
-<img src="" width="60%">
+  ![image](https://user-images.githubusercontent.com/81968879/167125623-d9a527e0-a3f9-4662-946c-575e93712388.png)
+
 </p>
 <h2 align="center">Zhaniya.Education</h2>
 
@@ -13,8 +14,7 @@
 
 ## General Info
 
-This is a blogging application written in the Django framework. It has [features](#features) of a standard blogging
-platform.
+This is a blogging application written in the Django framework. 
 
 ## Teachers
 
@@ -23,8 +23,8 @@ platform.
 
 ## Team Members
 
-* Zhaniya Rakhymbayeva 190103427@stu.sdu.edu.kz
-* Yernar Madiyar 190103361@stu.sdu.edu.kz
+* Zhaniya Rakhymbayeva 200103096@stu.sdu.edu.kz
+* Yernar Madiyar 200103029@stu.sdu.edu.kz
 
 ## Screenshots
 
