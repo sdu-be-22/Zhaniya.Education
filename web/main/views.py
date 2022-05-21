@@ -71,15 +71,15 @@ def create(request):
             form = ThemeForm()
     return render(request, 'create.html', {'form': form})
 
-def themes(request):
-    themes = Theme.objects.order_by('-id')
-    return render(request, 'themes.html', {'title': 'Takiriptar', 'themes': themes})
+def themes(request, classes):
+    themes = Theme.objects.filter(classes=classes)
+    return render(request, 'themes.html', {'title': 'Takiriptar', 'themes': themes, 'classes': classes})
 
 
-def tasks(request):
+def tasks(request, classes):
     if request.method == 'POST':
         print(request.POST)
-        questions=QuesModel.objects.all()
+        questions=QuesModel.objects.filter(classes=classes)
         score=0
         wrong=0
         correct=0
@@ -101,15 +101,17 @@ def tasks(request):
             'correct':correct,
             'wrong':wrong,
             'percent':percent,
-            'total':total
+            'total':total,
+            'classes': classes
         }
         return render(request,'result.html',context)
     else:
-        questions=QuesModel.objects.all()
+        questions=QuesModel.objects.filter(classes=classes)
         context = {
-            'questions':questions
+            'questions':questions,
+            'classes': classes
         }
-        return render(request,'tasks.html',context)
+        return render(request,'tasks.html',context, )
 
 def videoles(request):
     return render(request, 'videoles.html')

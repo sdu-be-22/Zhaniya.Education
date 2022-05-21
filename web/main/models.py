@@ -4,11 +4,12 @@ from email.policy import default
 from django.db import models
 
 # Create your models here.
+
 class Theme(models.Model):
     title = models.CharField('Takirip', max_length=50)
     ab_theme = models.TextField('Takirip jaily')
     image = models.ImageField(upload_to='task_images', null=True, blank=True)
-
+    classes = models.CharField('Qay synyp?', max_length=10, default="1 synyp")
     def __str__(self):
         return self.title
 
@@ -27,6 +28,7 @@ class Classes(models.Model):
         verbose_name_plural = 'классы'
 
 class QuesModel(models.Model):
+    classes = models.CharField('Qay synyp?', max_length=10, default="1 synyp")
     question = models.CharField(max_length=200,null=True)
     op1 = models.CharField(max_length=200,null=True)
     op2 = models.CharField(max_length=200,null=True)

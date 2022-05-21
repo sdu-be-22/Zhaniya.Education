@@ -2,6 +2,7 @@
  
 {% block content %}
 {% load static %}
+{% if questions %}
 <div class="shadow p-4 mb-5 bg-body rounde ">
 <h1>Esep shygarayyq</h1>
  
@@ -63,4 +64,11 @@
     {% endblock script %}
  
 </div>
+{% else %}
+<div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">Пока что нету задач</h3>
+    </div>
+  </div>
+{% endif %}
 {% endblock %}

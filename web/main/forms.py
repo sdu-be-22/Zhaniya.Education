@@ -1,3 +1,5 @@
+from random import choices
+from unicodedata import name
 from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
@@ -33,11 +35,17 @@ class NewUserForm(UserCreationForm):
 			user.save()
 		return user
 
+# choices = [('1 synyp', '1 synyp'),('2 synyp', '2 synyp'),('3 synyp', '3 synyp'),('4 synyp', '4 synyp'),('5 synyp', '5 synyp'),('6 synyp', '6 synyp'),('7 synyp', '7 synyp'),('8 synyp', '8 synyp'),('9 synyp', '9 synyp'),('10 synyp', '10 synyp'),('11 synyp', '11 synyp'),]
+classes = Classes.objects.all().values_list('title', 'title')
+
+classes_list = []
+for item in classes:
+    classes_list.append(item)
 
 class ThemeForm(ModelForm):
     class Meta:
         model = Theme
-        fields = ["title", "ab_theme", "image"]
+        fields = ["title", "ab_theme", "classes", "image", ]
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
@@ -46,6 +54,10 @@ class ThemeForm(ModelForm):
             "ab_theme": Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Takirip jaili qiskasha'
+            }),
+            "classes": forms.Select(choices = classes_list, attrs={
+                'class': 'form-control',
+                'placeholder': 'Takirip'
             }),
         }
 
@@ -61,6 +73,15 @@ class ClassesForm(ModelForm):
         }
 
 class addQuestionform(ModelForm):
+    
     class Meta:
         model=QuesModel
         fields="__all__"
+        widgets ={ 
+                "classes": forms.Select(choices = classes_list, attrs={
+                'class': 'form-control',
+                'placeholder': 'Takirip'
+            }),
+        }
+
+        

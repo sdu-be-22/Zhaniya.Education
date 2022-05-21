@@ -10,8 +10,8 @@
         <h3 class="panel-title">{{ el.title }}</h3>
       </div>
       <div class="panel-body">
-        <a class="nav-link " href="{% url 'themes' %}">Takiriptar</a>
-        <a class="nav-link " href="{% url 'tasks' %}">Esepter shygaru</a>
+        <a class="nav-link " href="{% url 'themes' el.title %}">Takiriptar</a>
+        <a class="nav-link " href="{% url 'tasks' el.title %}">Esepter shygaru</a>
         <a class="nav-link " href="{% url 'videoles' %}">Video Sabaktar</a>
     </div>
   </div>
