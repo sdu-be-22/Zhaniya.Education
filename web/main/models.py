@@ -4,9 +4,9 @@ from email.policy import default
 from django.db import models
 
 # Create your models here.
-class Task(models.Model):
+class Theme(models.Model):
     title = models.CharField('Takirip', max_length=50)
-    task = models.TextField('Takirip jaily')
+    ab_theme = models.TextField('Takirip jaily')
     image = models.ImageField(upload_to='task_images', null=True, blank=True)
 
     def __str__(self):

@@ -4,14 +4,14 @@
 
 {% block content %}         
 
-{% if tasks %}
-  {% for el in tasks %}
+{% if themes %}
+  {% for el in themes %}
   <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">{{ el.title }}</h3>
       </div>
       <div class="panel-body">
-        <p>{{ el.task }}</p>
+        <p>{{ el.ab_theme }}</p>
     </div>
     {% if el.image %}
           <!-- <img src="{{ el.image.url }}" class="img-responsive" style="width: 10%; float: left; margin-right: 10px;" /> -->

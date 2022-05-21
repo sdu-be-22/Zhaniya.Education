@@ -62,18 +62,18 @@ def log_out(request):
 def create(request):
     error = ''
     if request.method == 'POST':
-        form = TaskForm(request.POST, request.FILES)
+        form = ThemeForm(request.POST, request.FILES)
         
         if form.is_valid():
             form.save()
             return redirect('home')
     else:
-            form = TaskForm()
+            form = ThemeForm()
     return render(request, 'create.html', {'form': form})
 
 def themes(request):
-    tasks = Task.objects.order_by('-id')
-    return render(request, 'themes.html', {'title': 'Takiriptar', 'tasks': tasks})
+    themes = Theme.objects.order_by('-id')
+    return render(request, 'themes.html', {'title': 'Takiriptar', 'themes': themes})
 
 
 def tasks(request):

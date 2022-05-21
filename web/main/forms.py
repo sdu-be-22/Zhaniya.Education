@@ -34,16 +34,16 @@ class NewUserForm(UserCreationForm):
 		return user
 
 
-class TaskForm(ModelForm):
+class ThemeForm(ModelForm):
     class Meta:
-        model = Task
-        fields = ["title", "task", "image"]
+        model = Theme
+        fields = ["title", "ab_theme", "image"]
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Takirip'
             }),
-            "task": Textarea(attrs={
+            "ab_theme": Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Takirip jaili qiskasha'
             }),
