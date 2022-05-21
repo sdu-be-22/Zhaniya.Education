@@ -41,22 +41,22 @@ class TaskForm(ModelForm):
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Введите название'
+                'placeholder': 'Takirip'
             }),
             "task": Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Введите описание'
+                'placeholder': 'Takirip jaili qiskasha'
             }),
         }
 
 class ClassesForm(ModelForm):
     class Meta:
-        model = Task
+        model = Classes
         fields = ["title"]
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Введите название'
+                'placeholder': 'Введите класс'
             }),
         }
 

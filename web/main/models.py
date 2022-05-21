@@ -5,16 +5,16 @@ from django.db import models
 
 # Create your models here.
 class Task(models.Model):
-    title = models.CharField('Название', max_length=50)
-    task = models.TextField('Описание')
+    title = models.CharField('Takirip', max_length=50)
+    task = models.TextField('Takirip jaily')
     image = models.ImageField(upload_to='task_images', null=True, blank=True)
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name = 'Задача'
-        verbose_name_plural = 'Задачи'
+        verbose_name = 'Тема'
+        verbose_name_plural = 'Темы'
 
 class Classes(models.Model):
     title = models.CharField('Название', max_length=50)
@@ -36,3 +36,6 @@ class QuesModel(models.Model):
     
     def __str__(self):
         return self.question
+    class Meta:
+        verbose_name = 'вопрос'
+        verbose_name_plural = 'вопросы'

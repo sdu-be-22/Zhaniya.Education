@@ -3,15 +3,6 @@
 
 
 {% block content %}
-{% if tasks %}
-        {% for el in tasks %}
-            <div class="alert alert-warning mt-2">
-                <h3>{{ el.title }}</h3>
-                <p>{{ el.task }}</p>
-                <img src="{{ el.image.url }}" class="img-responsive" style="width: 10%; float: left; margin-right: 10px;" />
-            </div>
-        {% endfor %}
-{% else %}
-        <p>89589416516</p>
-{% endif %}
-{% endblock content %}
+   
+
+{% endblock %}

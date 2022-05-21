@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
+from .decorators import *
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.models import Group
 def home(request):
     titles = Classes.objects.order_by('-id')
     return render(request, 'index.html', {'title': 'Главная страница сайта', 'titles': titles})
@@ -14,18 +16,25 @@ def about(request):
 def lib(request):
     return render(request, 'lib.html') 
 
+@unauthenticated_user
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
 		if form.is_valid():
 			user = form.save()
+			group = Group.objects.get(name = 'users')
+			user.groups.add(group)
 			login(request, user)
 			messages.success(request, "Registration successful." )
 			return redirect("home")
+            
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
+    
 	return render (request=request, template_name="account/register.html", context={"register_form":form})
+        
 
+@unauthenticated_user
 def login_request(request):
 	if request.method == "POST":
 		form = AuthenticationForm(request, data=request.POST)
@@ -46,8 +55,10 @@ def login_request(request):
 
 def log_out(request):
 	logout(request)
-	return render(request, 'account/login.html')
+	return redirect('home') 
 
+
+@allowed_users(allowed_roles=["admin"])
 def create(request):
     error = ''
     if request.method == 'POST':
@@ -103,6 +114,7 @@ def tasks(request):
 def videoles(request):
     return render(request, 'videoles.html')
 
+@allowed_users(allowed_roles=["admin"])
 def clas(request):
     error = ''
     if request.method == 'POST':
@@ -113,8 +125,9 @@ def clas(request):
             return redirect('home')
     else:
             form = ClassesForm()
-    return render(request, 'create.html', {'form': form})
+    return render(request, 'clas.html', {'form': form})
 
+@allowed_users(allowed_roles=["admin"])
 def addtask(request):    
     if request.user.is_staff:
         form=addQuestionform()

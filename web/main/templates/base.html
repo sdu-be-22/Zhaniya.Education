@@ -30,51 +30,55 @@
         <nav class = "navbar ">
           <div class = "container">
   
-            <a href = "{% url 'home' %}" class = "navbar-brand logo">Zhaniya.Edu</a>
+            <a href = "/" class = "navbar-brand logo">Zhaniya.Edu</a>
             
             <div class="menu">
               <div class="top-nav">
-                <a href = "{% url 'home' %}" class = "navbar-brand">Zhaniya.Edu</a>
                 <div class="close">
                   <i class="bx bx-x"></i>
                 </div>
               </div>                       
                 <ul class="nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">basty bet</a>
+                    <a class="nav-link" href="/">basty bet</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'lib' %}">kıtaphana</a>
+                    <a class="nav-link" href="/lib">kitaphana</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="{% url 'about' %}">bız turaly</a>
+                    <a class="nav-link " href="/about">biz turaly</a>
+                  </li>
+
+                  {% if request.user.is_staff %}
+                  <li class="nav-item">
+                    <a class="nav-link " href="/create">takirip kosu</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="{% url 'create' %}">qurý</a>
+                    <a class="nav-link " href="/clas">synyp qosu</a>
+                  </li>
+                  {% endif %}
+
                     {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link " href="/log_out">Shygu</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="{% url 'log_out' %}">Log Out</a>
+                    <a class="nav-link" href="#">Qosh keldin, {{user.username}}</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome, {{user.username}}</a>
                     {% else %}
-                    <a class="nav-link " href="/login">Log In</a>
-                  </li>  
+                    <li class="nav-item">
+                      <a class="nav-link " href="/login">Qiru</a>
+                  </li> 
                   <li class="nav-item">
-                      <a class="nav-link " href="{% url 'register' %}">tırkelu</a>
+                      <a class="nav-link " href="/register">Tirkelu</a>
                   </li>
                     {% endif %}
-                  </li>
+
+
                 </ul>            
-            </div>
-            
-            <div class="hamburger">
-              <i class="bx bx-menu"></i>
             </div>
           </div>
         </nav>
-   <!-- </header>  -->
       <!-- end of header --> 
         
 {% block content %}
@@ -89,10 +93,10 @@
       <div class="footer-col">
         <h4>company</h4>
         <ol>
-          <li><a href="#">bız turaly</a></li>
-          <li><a href="#">bızdıñ qyzmetter</a></li>
+          <li><a href="#">biz turaly</a></li>
+          <li><a href="#">bizdiñ qyzmetter</a></li>
           <li><a href="#">qūpialylyq saiasaty</a></li>
-          <li><a href="#">serıktestık bağdarlama</a></li>
+          <li><a href="#">seriktestik bağdarlama</a></li>
         </ol>
       </div>
       
