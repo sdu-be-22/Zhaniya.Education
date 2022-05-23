@@ -11,7 +11,7 @@ urlpatterns = [
     path('register', views.register_request, name='register'),
     path('themes/<str:classes>/', views.themes, name='themes'),
     path('tasks/<str:classes>/', views.tasks, name='tasks'),
-    path('videoles', views.videoles, name='videoles'),
+    path('videoles/<str:classes>/', views.videoles, name='videoles'),
     path('clas', views.clas, name='clas'),
     path('addtask', views.addtask, name='addtask'),
 ]

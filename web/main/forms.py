@@ -84,4 +84,14 @@ class addQuestionform(ModelForm):
             }),
         }
 
-        
+class VideoForm(ModelForm):
+    
+    class Meta:
+        model=Video
+        fields="__all__"
+        widgets ={ 
+                "classes": forms.Select(choices = classes_list, attrs={
+                'class': 'form-control',
+                'placeholder': 'Takirip'
+            }),
+        }      

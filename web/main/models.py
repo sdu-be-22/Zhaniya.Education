@@ -2,6 +2,7 @@ from asyncio.windows_events import NULL
 from distutils.command.upload import upload
 from email.policy import default
 from django.db import models
+from embed_video.fields import EmbedVideoField
 
 # Create your models here.
 
@@ -41,3 +42,17 @@ class QuesModel(models.Model):
     class Meta:
         verbose_name = 'вопрос'
         verbose_name_plural = 'вопросы'
+
+class Video(models.Model):
+    classes = models.CharField('Qay synyp?', max_length=10, default="1 synyp")
+    video = EmbedVideoField(null=True, blank=True)
+
+class Books(models.Model):
+    title = models.CharField('Pan', max_length=50)
+    authors = models.TextField('Avtorlary')
+    front_image = models.ImageField(upload_to='book_images', null=True, blank=True)
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = 'книга'
+        verbose_name_plural = 'книги'

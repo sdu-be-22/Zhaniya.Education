@@ -113,8 +113,13 @@ def tasks(request, classes):
         }
         return render(request,'tasks.html',context, )
 
-def videoles(request):
-    return render(request, 'videoles.html')
+def videoles(request, classes):
+    vid=Video.objects.filter(classes=classes)
+    context = {
+            'vid':vid,
+            'classes': classes
+        }
+    return render(request, 'videoles.html', context)
 
 @allowed_users(allowed_roles=["admin"])
 def clas(request):

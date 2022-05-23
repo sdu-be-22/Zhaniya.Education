@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load embed_video_tags %}
 
 
 {% block content %}
-   
-
+{% for i in vid %}
+{% video i.video 'small' %}
+{% endfor %}
 {% endblock %}
