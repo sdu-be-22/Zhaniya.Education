@@ -14,7 +14,8 @@ def about(request):
     return render(request, 'about.html')
 
 def lib(request):
-    return render(request, 'lib.html') 
+    books = Books.objects.order_by('-id')
+    return render(request, 'lib.html', {'books': books}) 
 
 @unauthenticated_user
 def register_request(request):
@@ -147,3 +148,27 @@ def addtask(request):
         return render(request,'addtask.html',context)
     else: 
         return redirect('home')
+
+@allowed_users(allowed_roles=["admin"])
+def addvideo(request):    
+    if request.method == 'POST':
+        form = VideoForm(request.POST)
+        
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+            form = VideoForm()
+    return render(request, 'addvideo.html', {'form': form})
+
+def addbook(request):
+    error = ''
+    if request.method == 'POST':
+        form = BooksForm(request.POST, request.FILES)
+        
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+            form = BooksForm()
+    return render(request, 'addbook.html', {'form': form})

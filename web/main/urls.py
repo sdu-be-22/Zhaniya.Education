@@ -14,4 +14,6 @@ urlpatterns = [
     path('videoles/<str:classes>/', views.videoles, name='videoles'),
     path('clas', views.clas, name='clas'),
     path('addtask', views.addtask, name='addtask'),
+    path('addvideo', views.addvideo, name='addvideo'),
+    path('addbook', views.addbook, name='addbook'),
 ]

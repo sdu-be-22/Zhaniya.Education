@@ -7,6 +7,7 @@ from .models import *
 admin.site.register(Theme)
 admin.site.register(Classes)
 admin.site.register(QuesModel)
+admin.site.register(Books)
 
 
 class  MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):

@@ -92,6 +92,25 @@ class VideoForm(ModelForm):
         widgets ={ 
                 "classes": forms.Select(choices = classes_list, attrs={
                 'class': 'form-control',
-                'placeholder': 'Takirip'
+                'placeholder': 'Synyp'
             }),
         }      
+
+class BooksForm(ModelForm):
+    class Meta:
+        model = Books
+        fields = ["title", "authors", "front_image", ]
+        widgets = {
+            "title": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Title'
+            }),
+            "authors": Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Avtorlari'
+            }),
+            "classes": forms.Select(choices = classes_list, attrs={
+                'class': 'form-control',
+                'placeholder': 'synyp'
+            }),
+        }

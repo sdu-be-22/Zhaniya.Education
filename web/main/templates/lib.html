@@ -3,6 +3,16 @@
 
 
 {% block content %}
-   
-
+{% for i in books %}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ i.title }}</h3>
+      </div>
+      <div class="panel-body">
+        <p>{{ i.authors }}</p>
+    </div>
+          <img src="{{ i.front_image.url }}" class="img-responsive" style="width: 10%; float: left; margin-right: 10px;" />
+      </div>
+      <img src="{{ i.front_image.url }}" class="img-responsive" style="width: 10%; float: left; margin-right: 10px;" />
+{% endfor %}
 {% endblock %}
